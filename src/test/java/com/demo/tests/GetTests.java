@@ -1,9 +1,11 @@
 package com.demo.tests;
 
+import com.demo.annotations.ReportAnnotation;
 import com.demo.builder.RequestBuilder;
 import com.demo.constants.FrameworkConstants;
 import com.demo.enums.PropertiesType;
 import com.demo.pojo.Book;
+import com.demo.reports.ExtentLogger;
 import com.demo.utils.FileUtils;
 import com.demo.utils.PropertyUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -35,14 +37,16 @@ public class GetTests {
     }
 
     @Test
+    @ReportAnnotation(author = {"Debasmita"}, category ={"regression","practice"})
     public void getListOfBooks() throws IOException {
        Response response = RequestBuilder
                .buildRequestForGetCalls()
                .queryParam("type","fiction")
                .queryParam("limit",2)
                .get("/books");
+        response.prettyPrint();
 
-       response.prettyPrint();
+       ExtentLogger.logResponse(response.asPrettyString());
 
        assertThat(response.getStatusCode()).isEqualTo(200);
        FileUtils.storeResponseToOutputFile(FrameworkConstants.getResponseJsonFolderPath()+"response.json",response);
@@ -55,6 +59,7 @@ public class GetTests {
     }
     
     @Test
+    @ReportAnnotation(author = {"Debasmita"}, category ={"regression"})
     public void getSpecificBook(){
         int id =Integer.parseInt(PropertyUtils.getvalue(PropertiesType.BOOKID));
         Response response= RequestBuilder
@@ -62,6 +67,8 @@ public class GetTests {
                 .pathParam("id", id)
                 .get("/books/{id}");
         response.prettyPrint();
+
+        ExtentLogger.logResponse(response.asPrettyString());
 
         assertThat(response.getStatusCode()).isEqualTo(200);
         assertThat(response.jsonPath().getString("current-stock")).asInt().isGreaterThan(0);

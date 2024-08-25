@@ -1,12 +1,15 @@
 package com.demo.tests;
 
+import com.demo.annotations.ReportAnnotation;
 import com.demo.builder.RequestBuilder;
 import com.demo.constants.FrameworkConstants;
 import com.demo.enums.PropertiesType;
+import com.demo.reports.ExtentLogger;
 import com.demo.utils.FileUtils;
 import com.demo.utils.PropertyUtils;
 import com.demo.utils.RandomUtils;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -29,30 +32,39 @@ public class E2ETests {
     }
 
     @Test
+    @ReportAnnotation(author = {"Debasmita"}, category ={"regression","practice"})
     public void bookOrderE2E() throws IOException {
 
         String accessToken = getAccessToken();
 
         String customer = RandomUtils.getFullName();
 
+        //POST an order
         String reqBody = FileUtils.readJsonFileAndReturnString(FrameworkConstants.getRequestJsonFolderpath()+"RequestBody.json")
                 .replace("{Id}", PropertyUtils.getvalue(PropertiesType.BOOKID))
                 .replace("{Name}",customer );
 
-        Response postResponse = RequestBuilder
+        RequestSpecification specification = RequestBuilder
                 .buildRequestForPostCalls()
                 .header("Authorization", "Bearer " + accessToken)
-                .body(reqBody)
+                .body(reqBody);
+
+        ExtentLogger.logRequest(specification);
+
+        Response postResponse = specification
                 .post("/orders");
-
         postResponse.prettyPrint();
-        assertThat(postResponse.getStatusCode()).isEqualTo(201);
 
+        ExtentLogger.logResponse(postResponse.asPrettyString());
+
+        assertThat(postResponse.getStatusCode()).isEqualTo(201);
         String orderId = postResponse.jsonPath().getString("orderId");
 
+        //GET the order
         Response getResponse = getSpecificOrderResponse(orderId,accessToken);
         assertThat(getResponse.jsonPath().getString("customerName")).isEqualTo(customer);
 
+        //UPDATE the order
         String patchBody = "{\n" +
                 "  \"customerName\": \"Garnet Schule\"\n" +
                 "}";
@@ -66,9 +78,11 @@ public class E2ETests {
 
         assertThat(patchResponse.getStatusCode()).isEqualTo(204);
 
+        //GET after Order Update
         Response getUpdatedResponse = getSpecificOrderResponse(orderId,accessToken);
         assertThat(getUpdatedResponse.jsonPath().getString("customerName")).isEqualTo("Garnet Schule");
 
+        //DELETE the order
         Response deleteResponse = RequestBuilder
                 .buildRequestForGetCalls()
                 .header("Authorization", "Bearer " + accessToken)
@@ -77,6 +91,7 @@ public class E2ETests {
 
         assertThat(deleteResponse.getStatusCode()).isEqualTo(204);
 
+        //GET after Order Deletion
         Response afterDeleteResponse = getSpecificOrderResponse(orderId,accessToken);
         assertThat(afterDeleteResponse.getStatusCode()).isEqualTo(404);
         assertThat(afterDeleteResponse.jsonPath().getString("error")).isEqualTo("No order with id "+orderId);
@@ -84,11 +99,17 @@ public class E2ETests {
     }
 
     private Response getSpecificOrderResponse(String orderId, String accessToken) {
-        Response response = RequestBuilder
+        RequestSpecification specification = RequestBuilder
                 .buildRequestForGetCalls()
                 .header("Authorization", "Bearer " + accessToken)
-                .pathParam("orderId",orderId)
+                .pathParam("orderId",orderId);
+
+        ExtentLogger.logRequest(specification);
+
+        Response response = specification
                 .get("/orders/{orderId}");
+
+        ExtentLogger.logResponse(response.asPrettyString());
 
         response.prettyPrint();
         return response;
