@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.demo.listeners.TestListener"></listener>
+    </listeners>
+    <test parallel="methods" thread-count="6" name="D:/Practice Frameworks/RestAPIFramework">
+        <classes>
+            <class name="com.demo.tests.GetTests">
+                <methods>
+                    <include name="getApiStatus" />
+                    <include name="getListOfBooks" />
+                    <include name="getSpecificBook" />
+                </methods>
+            </class>
+            <class name="com.demo.tests.PostTests">
+                <methods>
+                    <include name="orderBook" />
+                </methods>
+            </class>
+            <class name="com.demo.tests.E2ETests">
+                <methods>
+                    <include name="bookOrderE2E" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
