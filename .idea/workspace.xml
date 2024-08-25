@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa89635-a5d7-49ad-858e-83c90b796b99" name="Changes" comment="few updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/builder/RequestBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/builder/RequestBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/E2ETests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/E2ETests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/GetTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/GetTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
-    </list>
+    <list default="true" id="caa89635-a5d7-49ad-858e-83c90b796b99" name="Changes" comment="adding testng.xml file and schema" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724592018153</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding testng.xml file and schema">
+      <created>1724595547616</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724595547616</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +238,7 @@
     <MESSAGE value="updating tests" />
     <MESSAGE value="adding Extent Report" />
     <MESSAGE value="few updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="few updates" />
+    <MESSAGE value="adding testng.xml file and schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding testng.xml file and schema" />
   </component>
 </project>
