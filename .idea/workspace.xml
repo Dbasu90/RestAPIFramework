@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa89635-a5d7-49ad-858e-83c90b796b99" name="Changes" comment="added API Tests">
+    <list default="true" id="caa89635-a5d7-49ad-858e-83c90b796b99" name="Changes" comment="adding Extent Report">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/E2ETests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/E2ETests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/GetTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/GetTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/PostTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/PostTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,17 @@
       <recent name="com.demo.reports" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.E2ETests">
+  <component name="RunManager" selected="TestNG.D:/Practice Frameworks/RestAPIFramework/testng.xml">
+    <configuration name="D:/Practice Frameworks/RestAPIFramework/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="RestAPIFramework" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2ETests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RestAPIFramework" />
       <extension name="coverage">
@@ -79,23 +88,6 @@
       <option name="MAIN_CLASS_NAME" value="com.demo.tests.E2ETests" />
       <option name="METHOD_NAME" value="bookOrderE2E" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GetTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="RestAPIFramework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.demo.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.demo.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.demo.tests.GetTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -140,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.D:/Practice Frameworks/RestAPIFramework/testng.xml" />
         <item itemvalue="TestNG.E2ETests" />
         <item itemvalue="TestNG.E2ETests.bookOrderE2E" />
         <item itemvalue="TestNG.PostTests.orderBook" />
         <item itemvalue="TestNG.PostTests.getAccessToken" />
-        <item itemvalue="TestNG.GetTests" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1724587282253</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updating tests">
+      <created>1724591341531</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724591341531</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding Extent Report">
+      <created>1724591415309</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724591415309</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +194,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added API Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added API Tests" />
+    <MESSAGE value="updating tests" />
+    <MESSAGE value="adding Extent Report" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding Extent Report" />
   </component>
 </project>

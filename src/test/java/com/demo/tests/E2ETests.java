@@ -69,11 +69,15 @@ public class E2ETests {
                 "  \"customerName\": \"Garnet Schule\"\n" +
                 "}";
 
-        Response patchResponse = RequestBuilder
+        RequestSpecification updateSpecification = RequestBuilder
                 .buildRequestForPostCalls()
                 .header("Authorization", "Bearer " + accessToken)
                 .pathParam("orderId",orderId)
-                .body(patchBody)
+                .body(patchBody);
+
+        ExtentLogger.logRequest(updateSpecification);
+
+        Response patchResponse = updateSpecification
                 .patch("/orders/{orderId}");
 
         assertThat(patchResponse.getStatusCode()).isEqualTo(204);
@@ -94,19 +98,15 @@ public class E2ETests {
         //GET after Order Deletion
         Response afterDeleteResponse = getSpecificOrderResponse(orderId,accessToken);
         assertThat(afterDeleteResponse.getStatusCode()).isEqualTo(404);
-        assertThat(afterDeleteResponse.jsonPath().getString("error")).isEqualTo("No order with id "+orderId);
+        assertThat(afterDeleteResponse.jsonPath().getString("error")).isEqualTo("No order with id " + orderId + ".");
 
     }
 
     private Response getSpecificOrderResponse(String orderId, String accessToken) {
-        RequestSpecification specification = RequestBuilder
+        Response response = RequestBuilder
                 .buildRequestForGetCalls()
                 .header("Authorization", "Bearer " + accessToken)
-                .pathParam("orderId",orderId);
-
-        ExtentLogger.logRequest(specification);
-
-        Response response = specification
+                .pathParam("orderId",orderId)
                 .get("/orders/{orderId}");
 
         ExtentLogger.logResponse(response.asPrettyString());

@@ -25,6 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class GetTests {
 
     @Test
+    @ReportAnnotation
     public void getApiStatus(){
         Response response = RequestBuilder
                 .buildRequestForGetCalls()
