@@ -10,6 +10,7 @@ import com.demo.utils.FileUtils;
 import com.demo.utils.PropertyUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -71,8 +72,10 @@ public class GetTests {
 
         ExtentLogger.logResponse(response.asPrettyString());
 
+        response.then().body(JsonSchemaValidator.matchesJsonSchema(new File(FrameworkConstants.getJsonSchemaFolderpath()+"schema.json")));
         assertThat(response.getStatusCode()).isEqualTo(200);
         assertThat(response.jsonPath().getString("current-stock")).asInt().isGreaterThan(0);
+
     
     }
 }

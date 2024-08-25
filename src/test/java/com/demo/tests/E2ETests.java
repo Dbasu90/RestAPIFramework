@@ -44,6 +44,7 @@ public class E2ETests {
                 .replace("{Id}", PropertyUtils.getvalue(PropertiesType.BOOKID))
                 .replace("{Name}",customer );
 
+        //blacklist the authorization
         RequestSpecification specification = RequestBuilder
                 .buildRequestForPostCalls()
                 .header("Authorization", "Bearer " + accessToken)

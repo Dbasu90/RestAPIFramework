@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa89635-a5d7-49ad-858e-83c90b796b99" name="Changes" comment="adding Extent Report">
+    <list default="true" id="caa89635-a5d7-49ad-858e-83c90b796b99" name="Changes" comment="few updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/builder/RequestBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/builder/RequestBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/E2ETests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/E2ETests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/tests/GetTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/tests/GetTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
       <recent name="com.demo.reports" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.D:/Practice Frameworks/RestAPIFramework/testng.xml">
+  <component name="RunManager" selected="TestNG.GetTests.getSpecificBook">
     <configuration name="D:/Practice Frameworks/RestAPIFramework/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RestAPIFramework" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -61,17 +63,29 @@
     </configuration>
     <configuration name="E2ETests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RestAPIFramework" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="com.demo.tests" />
       <option name="MAIN_CLASS_NAME" value="com.demo.tests.E2ETests" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
-      <listeners />
+      <listeners>
+        <listener class="com.demo.listeners.TestListener" />
+      </listeners>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,20 +108,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostTests.getAccessToken" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTests.getSpecificBook" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RestAPIFramework" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="com.demo.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.demo.tests.PostTests" />
-      <option name="METHOD_NAME" value="getAccessToken" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.tests.GetTests" />
+      <option name="METHOD_NAME" value="getSpecificBook" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
-      <listeners />
+      <listeners>
+        <listener class="com.demo.listeners.TestListener" />
+      </listeners>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,13 +156,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.GetTests.getSpecificBook" />
+      <item itemvalue="TestNG.D:/Practice Frameworks/RestAPIFramework/testng.xml" />
+      <item itemvalue="TestNG.E2ETests" />
+      <item itemvalue="TestNG.E2ETests.bookOrderE2E" />
+      <item itemvalue="TestNG.PostTests.orderBook" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.D:/Practice Frameworks/RestAPIFramework/testng.xml" />
+        <item itemvalue="TestNG.GetTests.getSpecificBook" />
         <item itemvalue="TestNG.E2ETests" />
+        <item itemvalue="TestNG.D:/Practice Frameworks/RestAPIFramework/testng.xml" />
         <item itemvalue="TestNG.E2ETests.bookOrderE2E" />
         <item itemvalue="TestNG.PostTests.orderBook" />
-        <item itemvalue="TestNG.PostTests.getAccessToken" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724591415309</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="few updates">
+      <created>1724592018153</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724592018153</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +236,7 @@
     <MESSAGE value="added API Tests" />
     <MESSAGE value="updating tests" />
     <MESSAGE value="adding Extent Report" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding Extent Report" />
+    <MESSAGE value="few updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="few updates" />
   </component>
 </project>

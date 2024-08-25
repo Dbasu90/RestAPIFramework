@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="com.demo.listeners.TestListener"></listener>
     </listeners>
-    <test parallel="methods" thread-count="6" name="D:/Practice Frameworks/RestAPIFramework">
+    <test parallel="methods" thread-count="5" name="D:/Practice Frameworks/RestAPIFramework">
         <classes>
             <class name="com.demo.tests.GetTests">
                 <methods>

@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "isbn": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "current-stock": {
+      "type": "integer"
+    },
+    "available": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "author",
+    "isbn",
+    "type",
+    "price",
+    "current-stock",
+    "available"
+  ]
+}
